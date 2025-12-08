@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Shrestha Bhaskar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Portfolio</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="greeting">Hello, I'm</span>
+                    <span class="name">Shrestha Bhaskar</span>
+                </h1>
+                <p class="hero-subtitle">Full Stack Developer & Software Engineer</p>
+                <p class="hero-description">
+                    I develop and maintain programs using Python and C#, manage systems, and create automation tools.
+                    Currently working at 株式会社日通建 (Nittsu Ken) in the Development Department.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-placeholder">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="80" fill="#6366f1" opacity="0.2"/>
+                        <circle cx="100" cy="80" r="30" fill="#6366f1"/>
+                        <ellipse cx="100" cy="140" rx="50" ry="30" fill="#6366f1"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a software developer based in Tokyo, Japan, with expertise in Python, C#, PHP, and web development.
+                        Since joining 株式会社日通建 in June 2023, I've been developing and maintaining programs used internally,
+                        managing nurse call systems, and working with captive portal systems.
+                    </p>
+                    <p>
+                        I specialize in creating automation tools to improve business efficiency, managing AWS infrastructure,
+                        and developing web applications using Flask and Laravel frameworks. I'm also experienced in server
+                        management, network administration, and cloud services.
+                    </p>
+                    <p>
+                        <strong>Languages:</strong> Nepali (Native), Japanese (Business Level), English (Business Level), Hindi (Conversational)
+                    </p>
+                    <p>
+                        <strong>Certifications:</strong> TOEIC 905, JLPT N2, AWS Certified Cloud Practitioner, Foundational C# with Microsoft
+                    </p>
+                    <div class="about-links">
+                        <a href="履歴.pdf" target="_blank" class="btn btn-outline">View Resume (履歴書)</a>
+                        <a href="職務経歴書.pdf" target="_blank" class="btn btn-outline">Work History (職務経歴書)</a>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">2+</div>
+                        <div class="stat-label">Years at Current Company</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">905</div>
+                        <div class="stat-label">TOEIC Score</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">N2</div>
+                        <div class="stat-label">JLPT Level</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">.NET</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">VBA</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks & Databases</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">REST APIs</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Cloud & Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Google Cloud</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Windows</span>
+                        <span class="skill-tag">NAS Server</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Others</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Visual Studio</span>
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">Access</span>
+                        <span class="skill-tag">Omada Controller</span>
+                        <span class="skill-tag">YAMAHA RTX</span>
+                        <span class="skill-tag">Network Admin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">Payment System</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>GMO Gateway Payment 3DS 2.0</h3>
+                        <p>Implemented secure credit card payment system with 3D Secure 2.0 authentication for paid WiFi services. Integrated GMO Gateway API for seamless payment processing.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>C#</span>
+                            <span>Payment API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Company Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">AWS Web App</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>AWS EC2 Start/Stop Flask WebApp</h3>
+                        <p>Developed a Flask-based web application for managing AWS EC2 instances, allowing users to start and stop instances through a user-friendly interface.</p>
+                        <div class="project-tech">
+                            <span>Flask</span>
+                            <span>AWS</span>
+                            <span>Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Company Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">Nurse Call System</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>JCCI Nurse Call System</h3>
+                        <p>Contributed to the development and maintenance of a nurse call system, ensuring reliable communication and emergency response capabilities.</p>
+                        <div class="project-tech">
+                            <span>C#</span>
+                            <span>.NET</span>
+                            <span>System Integration</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Company Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">Automation Tools</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Business Automation Tools</h3>
+                        <p>Created multiple automation tools to improve business efficiency, reducing manual work and streamlining internal processes.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Automation</span>
+                            <span>Scripting</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Company Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">Website Management</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Website Management & Development</h3>
+                        <p>Managed and maintained multiple websites including wkaina.jp and jcci.info. Also developed personal projects: Jp-link.co.jp and Enjoy-coop.com.</p>
+                        <div class="project-tech">
+                            <span>PHP</span>
+                            <span>Laravel</span>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://wkaina.jp" target="_blank" class="project-link">wkaina.jp</a>
+                            <a href="https://jcci.info" target="_blank" class="project-link">jcci.info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">Customer System</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Customer Management System</h3>
+                        <p>Developed a customer management system with bulk email sending capabilities and billing statement functionality for efficient customer communication.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>Email API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Company Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">NAS Server</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>NAS Server Management</h3>
+                        <p>Managed and maintained company's internal NAS server infrastructure, ensuring reliable data storage, backup solutions, and network file sharing capabilities for the organization.</p>
+                        <div class="project-tech">
+                            <span>NAS</span>
+                            <span>Server Management</span>
+                            <span>Network Storage</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Company Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">Single Page</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Single Page Website</h3>
+                        <p>Developed a modern, responsive single-page website with smooth scrolling navigation, interactive elements, and optimized performance for fast loading and great user experience.</p>
+                        <div class="project-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">Invoice System</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Invoice Mailing System</h3>
+                        <p>Built an automated invoice mailing system that generates invoices from database records and sends them via email. Features include invoice generation, email automation, and MySQL database integration.</p>
+                        <div class="project-tech">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>Email Automation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Company Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-description">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+            </p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:vasuvasker66@gmail.com">vasuvasker66@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:080-6737-7791">080-6737-7791</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Tokyo, Japan</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Shrestha Bhaskar. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
