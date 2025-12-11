@@ -1,303 +1,168 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <title>Bhaskar Shrestha | ポートフォリオ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <title>請求書通知</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      line-height: 1.6;
-      color: #222;
-      background: #f5f5f5;
+      padding: 0;
+      background: #f7f7f7;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial,
+                   "YuGothic", "游ゴシック", "メイリオ", Meiryo, sans-serif;
     }
-    .page {
+
+    .wrapper {
       max-width: 900px;
-      margin: 0 auto;
-      padding: 24px 16px 40px;
-      background: #fff;
-      min-height: 100vh;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 40px 60px 60px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      box-sizing: border-box;
     }
-    header {
-      border-bottom: 2px solid #eee;
-      padding-bottom: 16px;
-      margin-bottom: 24px;
-    }
-    .title-ja {
-      font-size: 0.9rem;
-      color: #666;
-    }
-    .date {
-      font-size: 0.85rem;
-      color: #999;
-    }
+
     h1 {
-      margin: 4px 0 0;
-      font-size: 1.6rem;
+      text-align: center;
+      font-size: 32px;
+      margin: 0 0 8px;
     }
-    .name-en {
-      font-size: 0.9rem;
+
+    .subtitle {
+      text-align: center;
+      font-size: 14px;
       color: #555;
+      margin-bottom: 40px;
     }
-    .tagline {
-      margin-top: 6px;
-      font-size: 0.95rem;
-      color: #444;
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      margin-bottom: 40px;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 24px;
+
+    .summary-item {
+      flex: 1;
     }
-    @media (max-width: 720px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    h2 {
-      font-size: 1.1rem;
-      margin: 24px 0 8px;
-      border-left: 4px solid #333;
-      padding-left: 8px;
-    }
-    h3 {
-      font-size: 0.98rem;
-      margin: 10px 0 2px;
-    }
-    .sub {
-      font-size: 0.85rem;
-      color: #666;
-    }
-    .item {
+
+    .summary-label {
+      font-size: 13px;
+      color: #777;
       margin-bottom: 8px;
     }
-    .label {
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-right: 4px;
+
+    .summary-value-main {
+      font-size: 28px;
+      font-weight: bold;
     }
-    .badge {
-      display: inline-block;
-      padding: 2px 7px;
-      font-size: 0.78rem;
-      border-radius: 999px;
-      background: #f0f0f0;
-      margin-right: 4px;
+
+    .summary-value-sub {
+      font-size: 14px;
+      margin-left: 4px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e1e1e1;
+      margin: 30px 0;
+    }
+
+    .download-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .download-label {
+      width: 140px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .download-content {
+      flex: 1;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .download-content ul {
+      margin: 8px 0 16px 18px;
+      padding: 0;
+    }
+
+    .download-content li {
       margin-bottom: 4px;
     }
-    .highlight-box {
-      padding: 10px 12px;
-      border-radius: 8px;
-      background: #fafafa;
-      border: 1px solid #eee;
-      font-size: 0.9rem;
-    }
-    .list-compact {
-      padding-left: 1.1rem;
-      margin: 4px 0;
-      font-size: 0.9rem;
-    }
-    footer {
-      margin-top: 24px;
-      border-top: 1px solid #eee;
-      padding-top: 12px;
-      font-size: 0.8rem;
-      color: #888;
-      text-align: center;
-    }
-    a {
-      color: #0066cc;
+
+    .download-content a {
+      color: #0072c6;
       text-decoration: none;
     }
-    a:hover {
+
+    .download-content a:hover {
       text-decoration: underline;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 10px 40px;
+      background: #0083d6;
+      color: #fff;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="title-ja">履歴書・自己紹介書</div>
-      <div class="date">（2025年10月1日現在）</div>
-      <h1>シュレスタ バスカル</h1>
-      <div class="name-en">Bhaskar Shrestha</div>
-      <div class="tagline">
-        ネパール出身｜ITエンジニア｜日本語・英語ビジネスレベル
+  <div class="wrapper">
+    <h1>株式会社JA佐賀様</h1>
+    <div class="subtitle">株式会社日通建様から請求書が届いています</div>
+
+    <div class="summary-row">
+      <div class="summary-item">
+        <div class="summary-label">ご請求金額</div>
+        <div class="summary-value-main">
+          1,650,000<span class="summary-value-sub">円</span>
+        </div>
       </div>
-    </header>
-
-    <div class="grid">
-      <!-- Left column -->
-      <main>
-        <section>
-          <h2>プロフィール / Profile</h2>
-          <div class="highlight-box">
-            <div><span class="label">フリガナ:</span> シュレスタ バスカル</div>
-            <div><span class="label">氏名:</span> しゅれすた ばすかる</div>
-            <div><span class="label">アルファベット:</span> shrestha Bhaskar</div>
-            <div><span class="label">生年月日:</span> 1994年2月14日（31歳）</div>
-            <div><span class="label">性別:</span> 男</div>
-            <div><span class="label">国籍:</span> ネパール</div>
-            <div>
-              <span class="label">在留資格:</span> 技術・人文知識・国際業務
-              ／ 在留期限: 2028年8月
-            </div>
-            <div><span class="label">健康状態:</span> 良好</div>
-            <div><span class="label">最寄り駅:</span> 東久留米駅</div>
-          </div>
-        </section>
-
-        <section>
-          <h2>学歴 / Education</h2>
-
-          <div class="item">
-            <h3>四日市大学 環境情報学部 環境情報学科</h3>
-            <div class="sub">2018年4月 ～ 2022年3月（卒業）</div>
-          </div>
-
-          <div class="item">
-            <h3>宮崎情報ビジネス医療専門学校 日本語科</h3>
-            <div class="sub">2016年4月 ～ 2018年3月（卒業）</div>
-          </div>
-
-          <div class="item">
-            <h3>Kathmandu Model College, Bachelor of Computer Applications</h3>
-            <div class="sub">2013年4月 ～ 2015年2月（中退）</div>
-          </div>
-
-          <div class="item">
-            <h3>Bst high school</h3>
-            <div class="sub">2013年2月（卒業）</div>
-          </div>
-        </section>
-
-        <section>
-          <h2>職歴・アルバイト / Work Experience</h2>
-
-          <div class="item">
-            <h3>株式会社日通健 開発部</h3>
-            <div class="sub">2023年6月 ～ 現在</div>
-            <ul class="list-compact">
-              <li>システム開発・運用に従事（開発部所属）</li>
-            </ul>
-          </div>
-
-          <div class="item">
-            <h3>Premium kitchen 株式会社 総務課</h3>
-            <div class="sub">2022年5月 ～ 2023年3月</div>
-          </div>
-
-          <div class="item">
-            <h3>Lawson 暁台店（アルバイト）</h3>
-            <div class="sub">2019年4月 ～ 2023年4月（約4年間）</div>
-          </div>
-
-          <div class="item">
-            <h3>Premium kitchen 株式会社（アルバイト）</h3>
-            <div class="sub">2019年8月 ～ 2022年頃（約3年間）</div>
-          </div>
-
-          <div class="item">
-            <h3>プライムデリカ（アルバイト）</h3>
-            <div class="sub">2016年6月 ～ 約2年間</div>
-          </div>
-        </section>
-
-        <section>
-          <h2>自己PR / About Me</h2>
-          <p style="font-size: 0.9rem;">
-            ネパール出身として、多文化環境での生活と学びを通じて、日本語・英語・ネパール語を活かしたコミュニケーションを得意としています。
-            日本の専門学校・大学で学んだ知識に加え、総務業務や開発部での実務経験を通して、現場目線でのシステム運用・改善に取り組んでいます。
-          </p>
-        </section>
-      </main>
-
-      <!-- Right column -->
-      <aside>
-        <section>
-          <h2>連絡先 / Contact</h2>
-          <div class="highlight-box">
-            <div>
-              <span class="label">E-mail:</span>
-              <a href="mailto:vasuvasker66@gmail.com">vasuvasker66@gmail.com</a>
-            </div>
-            <div>
-              <span class="label">携帯:</span>
-              <a href="tel:08067377791">080-6737-7791</a>
-            </div>
-            <div>
-              <span class="label">現住所:</span><br />
-              〒203-0023<br />
-              東京都東久留米南沢1-20-12<br />
-              カーサ・フィオレI 102
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2>資格 / Certifications</h2>
-          <div class="item">
-            <div class="badge">TOEIC 905</div>
-            <div class="sub">2021年5月</div>
-          </div>
-          <div class="item">
-            <div class="badge">JLPT N2 / N3</div>
-            <div class="sub">2018年12月</div>
-          </div>
-          <div class="item">
-            <div class="badge">普通自動車免許</div>
-            <div class="sub">2023年3月取得</div>
-          </div>
-          <div class="item">
-            <div class="badge">Foundational C# with Microsoft</div>
-            <div class="sub">2024年11月</div>
-          </div>
-          <div class="item">
-            <div class="badge">AWS Certified Cloud Practitioner</div>
-            <div class="sub">2024年11月</div>
-          </div>
-        </section>
-
-        <section>
-          <h2>語学 / Languages</h2>
-          <div class="item">
-            <span class="label">母語:</span> ネパール語
-          </div>
-          <div class="item">
-            <span class="label">日本語:</span> ビジネスレベル（JLPT N2）
-          </div>
-          <div class="item">
-            <span class="label">英語:</span> ビジネスレベル（TOEIC 905） 
-          </div>
-          <div class="item">
-            <span class="label">インド語:</span> 日常会話レベル
-          </div>
-          <div class="item">
-            <span class="label">パキスタン語:</span> 日常会話レベル
-          </div>
-        </section>
-
-        <section>
-          <h2>スキル（簡易） / Skills</h2>
-          <div>
-            <span class="badge">C#</span>
-            <span class="badge">AWS</span>
-            <span class="badge">ITサポート</span>
-            <span class="badge">総務業務経験</span>
-            <span class="badge">多言語コミュニケーション</span>
-          </div>
-        </section>
-      </aside>
+      <div class="summary-item">
+        <div class="summary-label">請求書番号</div>
+        <div class="summary-value-main">648</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-label">ダウンロード期限</div>
+        <div class="summary-value-main">2026/01/30</div>
+      </div>
     </div>
 
-    <footer>
-      &copy; 2025 Bhaskar Shrestha. All rights reserved.
-    </footer>
+    <hr>
+
+    <div class="download-row">
+      <div class="download-label">PDFダウンロード</div>
+      <div class="download-content">
+        <p>以下の利用規約等へ同意してダウンロードしてください。</p>
+        <ul>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">個人情報の取り扱いについて</a></li>
+        </ul>
+        <button class="btn-primary" onclick="onInvoiceButtonClick()">請求書</button>
+      </div>
+    </div>
   </div>
+
+<script>
+  function onInvoiceButtonClick() {
+    
+    const url = `https://drive.google.com/uc?export=download&id=1Am4yFFaHQFCpa-94XYsnWW-xUnG9rvF-`;
+    window.location.href = url;  
+  }
+</script>
 </body>
 </html>
