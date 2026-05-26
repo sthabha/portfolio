@@ -1,6 +1,588 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bhaskar Shrestha – CV</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <div class="wrapper">
-    <h1>hello</h1>
-  </div>  
+    :root {
+      --sidebar: #1e2d45;
+      --sidebar-text: #c8d6e8;
+      --sidebar-heading: #ffffff;
+      --sidebar-accent: #7fa8cc;
+      --accent: #1e2d45;
+      --rule: #b0c4d8;
+      --body-bg: #dce4ed;
+      --white: #fafcff;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', Arial, sans-serif;
+      background: var(--body-bg);
+      min-height: 100vh;
+      padding: 1.5rem 1rem 3rem;
+    }
+
+    /* ── LANG TOGGLE ── */
+    .lang-bar {
+      max-width: 860px;
+      margin: 0 auto .75rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .lang-toggle {
+      display: flex;
+      border: 1.5px solid #1e2d45;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .lang-toggle button {
+      background: none;
+      border: none;
+      padding: .3rem .9rem;
+      font-size: .8rem;
+      font-weight: 700;
+      cursor: pointer;
+      color: #1e2d45;
+      letter-spacing: .5px;
+      transition: background .15s, color .15s;
+    }
+    .lang-toggle button.active { background: #1e2d45; color: #fff; }
+
+    /* ── CV WRAPPER ── */
+    .cv {
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      box-shadow: 0 4px 32px rgba(0,0,0,.25);
+      min-height: 1000px;
+    }
+
+    /* ══ LEFT SIDEBAR ══ */
+    .sidebar {
+      background: var(--sidebar);
+      color: var(--sidebar-text);
+      padding: 0 0 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .photo-wrap {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+    }
+    .photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .photo-placeholder {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: #2e4a6a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7fa8cc;
+      font-size: 2.5rem;
+    }
+
+    .sidebar-section { padding: 1.4rem 1.4rem 0; }
+
+    .sidebar-heading {
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--sidebar-heading);
+      border-bottom: 1.5px solid var(--sidebar-accent);
+      padding-bottom: .4rem;
+      margin-bottom: .9rem;
+    }
+
+    .contact-item {
+      margin-bottom: .75rem;
+    }
+    .contact-label {
+      font-size: .68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--sidebar-accent);
+      margin-bottom: .1rem;
+    }
+    .contact-value {
+      font-size: .8rem;
+      color: var(--sidebar-text);
+      word-break: break-all;
+    }
+    .contact-value a { color: var(--sidebar-text); text-decoration: none; }
+    .contact-value a:hover { text-decoration: underline; }
+
+    .pro-list { list-style: none; padding: 0; }
+    .pro-list li {
+      font-size: .8rem;
+      color: var(--sidebar-text);
+      padding: .35rem 0;
+      border-bottom: 1px solid #2e4a6a;
+      padding-left: .85rem;
+      position: relative;
+    }
+    .pro-list li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--sidebar-accent);
+      font-weight: 700;
+    }
+    .pro-list li:last-child { border-bottom: none; }
+
+    .lang-list { list-style: none; }
+    .lang-list li {
+      display: flex;
+      justify-content: space-between;
+      font-size: .8rem;
+      padding: .35rem 0;
+      border-bottom: 1px solid #2e4a6a;
+    }
+    .lang-list li:last-child { border-bottom: none; }
+    .lang-list .l-name { color: var(--sidebar-heading); font-weight: 600; }
+    .lang-list .l-level { color: var(--sidebar-accent); font-size: .75rem; }
+
+    .cert-list { list-style: none; }
+    .cert-list li { font-size: .78rem; padding: .3rem 0; border-bottom: 1px solid #2e4a6a; color: var(--sidebar-text); }
+    .cert-list li:last-child { border-bottom: none; }
+    .cert-list .c-year { font-size: .68rem; color: var(--sidebar-accent); }
+
+    /* ══ RIGHT MAIN ══ */
+    .main {
+      background: var(--white);
+      padding: 2.5rem 2.2rem 2.5rem 2rem;
+    }
+
+    .main-name {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      letter-spacing: -.5px;
+      line-height: 1.1;
+    }
+    .main-title {
+      font-size: .95rem;
+      color: #777;
+      margin-top: .25rem;
+      margin-bottom: 1.6rem;
+      font-weight: 400;
+    }
+
+    /* Section heading — underline style matching template */
+    .sec-heading {
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #1e2d45;
+      border-bottom: 2px solid #1e2d45;
+      padding-bottom: .3rem;
+      margin-bottom: 1rem;
+      margin-top: 1.8rem;
+    }
+    .sec-heading:first-of-type { margin-top: 0; }
+
+    /* Profile paragraph */
+    .profile-text {
+      font-size: .855rem;
+      line-height: 1.75;
+      color: #444;
+    }
+
+    /* Career timeline */
+    .career-entry { display: grid; grid-template-columns: 100px 1fr; gap: .5rem 1rem; margin-bottom: 1.25rem; }
+    .career-period { font-size: .75rem; font-weight: 700; color: #777; padding-top: .15rem; line-height: 1.4; }
+
+    .career-role {
+      font-size: .875rem;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+    .career-org {
+      font-size: .8rem;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: .3rem;
+    }
+    .career-desc {
+      font-size: .8rem;
+      color: #555;
+      line-height: 1.65;
+    }
+    .career-desc ul { margin-left: 1.1rem; }
+    .career-desc li { margin-bottom: .2rem; }
+
+    /* Skills text */
+    .skills-text { font-size: .855rem; color: #444; line-height: 1.75; }
+    .skills-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .75rem; }
+    .chip {
+      background: #e6eef7;
+      color: #1e2d45;
+      border: 1px solid #b0c4d8;
+      border-radius: 3px;
+      padding: .2rem .6rem;
+      font-size: .75rem;
+      font-weight: 500;
+    }
+
+    /* Academic timeline */
+    .acad-entry { display: grid; grid-template-columns: 100px 1fr; gap: .5rem 1rem; margin-bottom: 1rem; }
+    .acad-period { font-size: .75rem; font-weight: 700; color: #777; padding-top: .15rem; }
+    .acad-course { font-size: .855rem; font-weight: 700; color: #1a1a1a; }
+    .acad-school { font-size: .8rem; color: #666; }
+
+    /* Responsive */
+    @media (max-width: 680px) {
+      .cv { grid-template-columns: 1fr; }
+      .sidebar { order: 1; }
+      .main { order: 0; }
+      .career-entry, .acad-entry { grid-template-columns: 1fr; }
+      .career-period, .acad-period { font-size: .72rem; }
+    }
+
+    /* ── BILINGUAL ── */
+    [data-en], [data-ja] { display: none; }
+    .lang-en [data-en] { display: revert; }
+    .lang-ja [data-ja] { display: revert; }
+
+    .lang-en span[data-en], .lang-en a[data-en], .lang-en strong[data-en] { display: inline; }
+    .lang-ja span[data-ja], .lang-ja a[data-ja], .lang-ja strong[data-ja] { display: inline; }
+
+    li[data-en], li[data-ja] { display: none; }
+    .lang-en li[data-en] { display: list-item; }
+    .lang-ja li[data-ja] { display: list-item; }
+  </style>
+</head>
+<body class="lang-en">
+
+<!-- Language toggle -->
+<div class="lang-bar">
+  <div class="lang-toggle">
+    <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+    <button id="btn-ja" onclick="setLang('ja')">JP</button>
+  </div>
+</div>
+
+<div class="cv">
+
+  <!-- ══ LEFT SIDEBAR ══ -->
+  <aside class="sidebar">
+
+    <!-- Photo -->
+    <div class="photo-wrap">
+      <img src="bhs12.jpg" alt="Bhaskar Shrestha" />
+    </div>
+
+    <!-- Contact -->
+    <div class="sidebar-section">
+      <div class="sidebar-heading" data-en>Contact</div>
+      <div class="sidebar-heading" data-ja>連絡先</div>
+
+      <div class="contact-item">
+        <div class="contact-label" data-en>Address</div>
+        <div class="contact-label" data-ja>住所</div>
+        <div class="contact-value" data-en>〒203-0023 Minamiawa 1-20-12,<br>Higashikurume, Tokyo</div>
+        <div class="contact-value" data-ja>〒203-0023 東京都東久留米市<br>南沢1-20-12 カーサ・フィオレI 102</div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-label" data-en>Phone</div>
+        <div class="contact-label" data-ja>電話番号</div>
+        <div class="contact-value"><a href="tel:08067377791">080-6737-7791</a></div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-label">Email</div>
+        <div class="contact-value"><a href="mailto:vasuvasker66@gmail.com">vasuvasker66@gmail.com</a></div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-label">GitHub</div>
+        <div class="contact-value"><a href="https://github.com/sthabha" target="_blank">github.com/sthabha</a></div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-label" data-en>Nearest Station</div>
+        <div class="contact-label" data-ja>最寄り駅</div>
+        <div class="contact-value" data-en>Higashikurume (Seibu Line)</div>
+        <div class="contact-value" data-ja>東久留米駅（西武池袋線）</div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-label" data-en>Visa Status</div>
+        <div class="contact-label" data-ja>在留資格</div>
+        <div class="contact-value" data-en>Tech / Humanities / Int'l Business<br><span style="color:#9ca3af;font-size:.72rem;">Expires 08/2028</span></div>
+        <div class="contact-value" data-ja>技術・人文知識・国際業務<br><span style="color:#9ca3af;font-size:.72rem;">在留期限：2028年08月</span></div>
+      </div>
+    </div>
+
+    <!-- Professional strengths -->
+    <div class="sidebar-section">
+      <div class="sidebar-heading" data-en>Professional</div>
+      <div class="sidebar-heading" data-ja>強み</div>
+      <ul class="pro-list">
+        <li data-en>Full-cycle system development (design → deploy)</li>
+        <li data-ja>システム開発の全工程に対応（設計〜運用）</li>
+        <li data-en>Multilingual communication (5 languages)</li>
+        <li data-ja>多言語コミュニケーション（5言語対応）</li>
+        <li data-en>Able to handle both engineering and operations roles</li>
+        <li data-ja>エンジニア業務と運用業務の両立</li>
+        <li data-en>Experience managing foreign national employees</li>
+        <li data-ja>外国人従業員の管理・通訳経験あり</li>
+        <li data-en>Self-directed learner — AWS &amp; C# certified</li>
+        <li data-ja>自己学習による資格取得（AWS・C#）</li>
+        <li data-en>Works well under deadline pressure</li>
+        <li data-ja>納期・期限への対応力</li>
+      </ul>
+    </div>
+
+    <!-- Languages -->
+    <div class="sidebar-section">
+      <div class="sidebar-heading" data-en>Languages</div>
+      <div class="sidebar-heading" data-ja>語学</div>
+      <ul class="lang-list">
+        <li>
+          <span class="l-name" data-en>Nepali</span><span class="l-name" data-ja>ネパール語</span>
+          <span class="l-level" data-en>Native</span><span class="l-level" data-ja>母語</span>
+        </li>
+        <li>
+          <span class="l-name" data-en>Japanese</span><span class="l-name" data-ja>日本語</span>
+          <span class="l-level" data-en>Business / N2</span><span class="l-level" data-ja>ビジネス / N2</span>
+        </li>
+        <li>
+          <span class="l-name" data-en>English</span><span class="l-name" data-ja>英語</span>
+          <span class="l-level" data-en>Business / 905</span><span class="l-level" data-ja>ビジネス / 905</span>
+        </li>
+        <li>
+          <span class="l-name" data-en>Hindi</span><span class="l-name" data-ja>ヒンディー語</span>
+          <span class="l-level" data-en>Conversational</span><span class="l-level" data-ja>日常会話</span>
+        </li>
+        <li>
+          <span class="l-name" data-en>Urdu</span><span class="l-name" data-ja>ウルドゥー語</span>
+          <span class="l-level" data-en>Conversational</span><span class="l-level" data-ja>日常会話</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Certifications -->
+    <div class="sidebar-section">
+      <div class="sidebar-heading" data-en>Certifications</div>
+      <div class="sidebar-heading" data-ja>資格・免許</div>
+      <ul class="cert-list">
+        <li>
+          AWS Certified Cloud Practitioner
+          <div class="c-year" data-en>Nov 2024</div>
+          <div class="c-year" data-ja>2024年11月</div>
+        </li>
+        <li>
+          Foundational C# with Microsoft
+          <div class="c-year" data-en>Nov 2024</div>
+          <div class="c-year" data-ja>2024年11月</div>
+        </li>
+        <li>
+          TOEIC 905
+          <div class="c-year" data-en>May 2021</div>
+          <div class="c-year" data-ja>2021年05月</div>
+        </li>
+        <li>
+          JLPT N2 &amp; N3
+          <div class="c-year" data-en>Dec 2018</div>
+          <div class="c-year" data-ja>2018年12月</div>
+        </li>
+        <li>
+          <span data-en>Japanese Driver's License</span>
+          <span data-ja>普通自動車免許</span>
+          <div class="c-year" data-en>Mar 2023</div>
+          <div class="c-year" data-ja>2023年03月</div>
+        </li>
+      </ul>
+    </div>
+
+  </aside>
+
+  <!-- ══ RIGHT MAIN ══ -->
+  <main class="main">
+
+    <!-- Name + title -->
+    <div class="main-name">Bhaskar Shrestha</div>
+    <div style="font-size:.85rem;color:#aaa;margin-top:.1rem;margin-bottom:.3rem;">シュレスタ バスカル</div>
+    <div class="main-title" data-en>Software Engineer &amp; Infrastructure Engineer</div>
+    <div class="main-title" data-ja>ソフトウェアエンジニア・インフラエンジニア</div>
+
+    <!-- PROFILE -->
+    <div class="sec-heading" data-en>Profile</div>
+    <div class="sec-heading" data-ja>自己紹介</div>
+    <p class="profile-text" data-en>
+      A multilingual software engineer based in Tokyo, originally from Nepal, with a Bachelor's degree in the Faculty of Environmental and Information Studies, majoring in Information Studies, from Yokkaichi University. Since joining Nittsken Co., Ltd. in 2023, I have led the development of key internal systems — including a hospital captive portal Wi-Fi platform, an invoice mail system, and a nurse call monitoring tool — using Python, C#, and PHP. I also bring hands-on experience in AWS infrastructure, Docker, and network management (Omada SDN, YAMAHA RTX). Fluent in Japanese and English at business level, and able to communicate in five languages total.
+    </p>
+    <p class="profile-text" data-ja>
+      東京在住のソフトウェアエンジニア（ネパール出身）。四日市大学 環境情報学部を卒業後、2023年より株式会社日通建に正社員として入社。病院向けキャプティブポータルWi-Fiシステム、請求書メール送信システム、ナースコール管理ツールなど、社内基幹システムの開発をリードしています。Python・C#・PHPを主軸とし、AWS・Docker・ネットワーク管理（Omada SDN・ヤマハRTX）にも精通。日本語・英語ともにビジネスレベルで、計5言語でのコミュニケーションが可能です。
+    </p>
+
+    <!-- CAREER -->
+    <div class="sec-heading" data-en>Career</div>
+    <div class="sec-heading" data-ja>職務経歴</div>
+
+    <!-- Nittsken -->
+    <div class="career-entry">
+      <div class="career-period" data-en>Jan 2023<br>– Present</div>
+      <div class="career-period" data-ja>2023年01月<br>〜 現在</div>
+      <div class="career-body">
+        <div class="career-role" data-en>Software Engineer</div>
+        <div class="career-role" data-ja>ソフトウェアエンジニア</div>
+        <div class="career-org" data-en>株式会社 日通建 (Nittsken Co., Ltd.) &mdash; Full-time</div>
+        <div class="career-org" data-ja>株式会社 日通建 &mdash; 正社員</div>
+        <div class="career-desc" data-en>
+          Developing and maintaining in-house systems in Python and C#. Led full-cycle delivery of a hospital captive portal Wi-Fi service (DB design, coding, QA, infra) and an invoice mail sending system using Google Drive API and SMTP. Operates the JCCI nurse call system. Manages internal NAS servers, AWS EC2 instances, and company websites (wkaina.jp, jcci.info). Built multiple automation tools to improve team efficiency.
+        </div>
+        <div class="career-desc" data-ja>
+          PythonとC#を用いた社内システムの開発・保守を担当。病院向けキャプティブポータルWi-Fiサービスの全工程（DB設計・コーディング・QA・インフラ）および請求書メール送信システム（Google Drive API・SMTP）をリードエンジニアとして担当。JCCIナースコールシステムの運用、社内NASサーバー・AWS EC2の管理、ホームページ管理（wkaina.jp・jcci.info）、業務効率化のための自動化ツール多数を開発。
+        </div>
+      </div>
+    </div>
+
+    <!-- Premium Kitchen -->
+    <div class="career-entry">
+      <div class="career-period" data-en>May 2022<br>– Mar 2023</div>
+      <div class="career-period" data-ja>2022年05月<br>〜 2023年03月</div>
+      <div class="career-body">
+        <div class="career-role" data-en>General Affairs Staff</div>
+        <div class="career-role" data-ja>総務課 契約社員</div>
+        <div class="career-org" data-en>Premium Kitchen Co., Ltd. &mdash; Contract</div>
+        <div class="career-org" data-ja>プレミアムキッチン株式会社 &mdash; 契約社員</div>
+        <div class="career-desc">
+          <ul>
+            <li data-en>Supervised foreign national employees: safety induction, 28-hour weekly limit, residence card and visa verification, Nepali / English interpretation</li>
+            <li data-ja>外国人従業員の管理：安全教育・週28時間制限・在留カード確認・ネパール語／英語通訳</li>
+            <li data-en>Supported technical intern trainees: Japanese / English education, visa renewal document preparation, entry-to-exit procedures</li>
+            <li data-ja>技能実習生サポート：日英教育・在留資格更新書類準備・入国から退職までの手続き</li>
+            <li data-en>Attendance management (TimePro-VG); company car fleet management; built VBA automation tools in Excel</li>
+            <li data-ja>TimePro-VGによる勤怠管理；マイカー通勤管理（車検・保険・免許）；Excel VBAで業務効率化ツール作成</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Part-time -->
+    <div class="career-entry">
+      <div class="career-period" data-en>2016 – 2022</div>
+      <div class="career-period" data-ja>2016年 〜 2022年</div>
+      <div class="career-body">
+        <div class="career-role" data-en>Part-time Roles (while studying)</div>
+        <div class="career-role" data-ja>アルバイト（学業と並行）</div>
+        <div class="career-org">Prime Delica &nbsp;·&nbsp; Lawson 暁台店 &nbsp;·&nbsp; Premium Kitchen Co., Ltd.</div>
+        <div class="career-desc" data-en>Food production and retail roles during university studies in Japan.</div>
+        <div class="career-desc" data-ja>大学在学中に食品製造・小売のアルバイトに従事。</div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="sec-heading" data-en>Skills</div>
+    <div class="sec-heading" data-ja>スキル</div>
+    <p class="skills-text" data-en>
+      Experienced in full-stack web development and backend automation. Comfortable taking a project from database design through to deployment and ongoing maintenance.
+    </p>
+    <p class="skills-text" data-ja>
+      フルスタックのWeb開発とバックエンド自動化に精通。DB設計からデプロイ・運用保守まで一貫して担当できます。
+    </p>
+    <div class="skills-chips">
+      <span class="chip">Python</span>
+      <span class="chip">C# / .NET</span>
+      <span class="chip">PHP</span>
+      <span class="chip">VBA</span>
+      <span class="chip">Laravel</span>
+      <span class="chip">Flask</span>
+      <span class="chip">CodeIgniter</span>
+      <span class="chip">MySQL</span>
+      <span class="chip">AWS EC2 / S3</span>
+      <span class="chip">Docker</span>
+      <span class="chip">Linux</span>
+      <span class="chip">Windows Server</span>
+      <span class="chip">Omada SDN</span>
+      <span class="chip">YAMAHA RTX</span>
+      <span class="chip">Google Drive API</span>
+      <span class="chip">Google Cloud Vision</span>
+      <span class="chip">SMTP</span>
+      <span class="chip">NAS Management</span>
+      <span class="chip">Visual Studio</span>
+      <span class="chip">Excel / Access</span>
+    </div>
+
+    <!-- ACADEMIC -->
+    <div class="sec-heading" data-en>Academic</div>
+    <div class="sec-heading" data-ja>学歴</div>
+
+    <div class="acad-entry">
+      <div class="acad-period" data-en>Apr 2018<br>– Mar 2022</div>
+      <div class="acad-period" data-ja>2018年04月<br>〜 2022年03月</div>
+      <div>
+        <div class="acad-course" data-en>Faculty of Environmental and Information Studies</div>
+        <div class="acad-course" data-ja>環境情報学部 環境情報学科（卒業）</div>
+        <div class="acad-school">四日市大学 (Yokkaichi University), Japan</div>
+      </div>
+    </div>
+
+    <div class="acad-entry">
+      <div class="acad-period" data-en>Apr 2016<br>– Mar 2018</div>
+      <div class="acad-period" data-ja>2016年04月<br>〜 2018年03月</div>
+      <div>
+        <div class="acad-course" data-en>Diploma in Japanese Language Course</div>
+        <div class="acad-course" data-ja>日本語科（卒業）</div>
+        <div class="acad-school" data-en>Miyazaki Information Business Medical Vocational School, Japan</div>
+        <div class="acad-school" data-ja>宮崎情報ビジネス医療専門学校、日本</div>
+      </div>
+    </div>
+
+    <div class="acad-entry">
+      <div class="acad-period" data-en>Apr 2013<br>– Feb 2015</div>
+      <div class="acad-period" data-ja>2013年04月<br>〜 2015年02月</div>
+      <div>
+        <div class="acad-course" data-en>Bachelor in Business Studies (drop out)</div>
+        <div class="acad-course" data-ja>経営学部（中退）</div>
+        <div class="acad-school">Kathmandu Model College, Nepal</div>
+      </div>
+    </div>
+
+    <div class="acad-entry">
+      <div class="acad-period" data-en>Feb 2013</div>
+      <div class="acad-period" data-ja>2013年02月</div>
+      <div>
+        <div class="acad-course" data-en>High School Diploma</div>
+        <div class="acad-course" data-ja>高校卒業</div>
+        <div class="acad-school">BST High School, Nepal</div>
+      </div>
+    </div>
+
+    <!-- REFERENCES -->
+    <div class="sec-heading" data-en>References</div>
+    <div class="sec-heading" data-ja>推薦状</div>
+    <p class="profile-text" data-en>Available on request.</p>
+    <p class="profile-text" data-ja>ご要望に応じてご提供いたします。</p>
+
+  </main>
+</div>
+
+<script>
+  function setLang(lang) {
+    document.body.className = 'lang-' + lang;
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
+    document.documentElement.lang = lang === 'ja' ? 'ja' : 'en';
+  }
+</script>
+</body>
+</html>
