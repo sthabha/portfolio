@@ -249,6 +249,19 @@
       font-weight: 500;
     }
 
+    /* Project entries */
+    .project-entry { margin-bottom: 1.4rem; padding-bottom: 1.2rem; border-bottom: 1px solid #e8edf3; }
+    .project-entry:last-child { border-bottom: none; margin-bottom: 0; }
+    .project-title { font-size: .875rem; font-weight: 700; color: #1e2d45; margin-bottom: .15rem; }
+    .project-title a { color: #1e2d45; text-decoration: none; }
+    .project-title a:hover { text-decoration: underline; }
+    .project-url { font-size: .75rem; color: var(--sidebar-accent); margin-bottom: .35rem; }
+    .project-url a { color: #5a8ab0; text-decoration: none; }
+    .project-url a:hover { text-decoration: underline; }
+    .project-desc { font-size: .8rem; color: #555; line-height: 1.65; }
+    .project-desc ul { margin-left: 1.1rem; margin-top: .35rem; }
+    .project-desc li { margin-bottom: .2rem; }
+
     /* Academic timeline */
     .acad-entry { display: grid; grid-template-columns: 100px 1fr; gap: .5rem 1rem; margin-bottom: 1rem; }
     .acad-period { font-size: .75rem; font-weight: 700; color: #777; padding-top: .15rem; }
@@ -500,6 +513,56 @@
       </div>
     </div>
 
+    <!-- PROJECTS -->
+    <div class="sec-heading" data-en>Projects</div>
+    <div class="sec-heading" data-ja>プロジェクト</div>
+
+    <!-- enjoy-coop.com -->
+    <div class="project-entry">
+      <div class="project-title" data-en>Enjoy Cooperative — Technical Training & Skilled Worker Portal</div>
+      <div class="project-title" data-ja>エンジョイ協同組合 — 技能実習・特定技能 Webプラットフォーム</div>
+      <div class="project-url"><a href="https://enjoy-coop.com/" target="_blank">enjoy-coop.com</a></div>
+      <div class="project-desc" data-en>
+        Developed the corporate web platform for a Japan-based technical training cooperative that coordinates international worker placements across 15+ countries. The site covers both the Technical Training and Skilled Worker visa pathways and provides structured information on visa procedures, workplace integration, and industry-specific placement programs.
+        <ul>
+          <li>Multi-country recruitment flow covering agriculture, construction, and manufacturing sectors</li>
+          <li>Informational modules for Technical Training (3–5 year) and Skilled Worker visa tracks</li>
+          <li>Visa and administrative guidance content for both employers and candidates</li>
+        </ul>
+      </div>
+      <div class="project-desc" data-ja>
+        15カ国以上に展開する外国人技能実習向け協同組合のWebプラットフォームを開発。技能実習（3〜5年）・特定技能の両制度に対応した情報モジュールを実装し、ビザ申請手続きや職場定着支援、業種別受入プログラムを紹介するサイト構成を構築。
+        <ul>
+          <li>農業・建設・製造業など複数業種の多国籍採用フローに対応</li>
+          <li>技能実習・特定技能の制度別コンテンツを整備</li>
+          <li>企業・外国人双方向けのビザ・行政手続きガイドを実装</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- jp-link.co.jp -->
+    <div class="project-entry">
+      <div class="project-title" data-en>Japan Link Co., Ltd. — Foreign Worker Recruitment Platform</div>
+      <div class="project-title" data-ja>株式会社ジャパンリンク — 外国人材採用プラットフォーム</div>
+      <div class="project-url"><a href="https://www.jp-link.co.jp/" target="_blank">jp-link.co.jp</a></div>
+      <div class="project-desc" data-en>
+        Built and maintained the corporate website for a full-service foreign worker recruitment and staffing agency operating in manufacturing, food service, healthcare, and hospitality. The platform communicates the company's end-to-end service offering — from overseas sourcing and pre-employment training to visa processing and post-hire follow-up.
+        <ul>
+          <li>End-to-end recruitment workflow: overseas sourcing → pre-employment training → visa acquisition → onboarding</li>
+          <li>Service pages covering domestic and international hiring channels</li>
+          <li>Real estate and study-abroad ancillary service sections integrated into the site</li>
+        </ul>
+      </div>
+      <div class="project-desc" data-ja>
+        製造・飲食・医療・ホスピタリティ分野向けの外国人材紹介・派遣会社のコーポレートサイトを構築・保守。海外候補者の採用から事前研修・ビザ取得・入社後フォローアップまで一貫したサービスを紹介するサイト構成を実装。
+        <ul>
+          <li>海外採用→事前研修→ビザ申請→入社サポートのエンドツーエンドフロー紹介</li>
+          <li>国内・海外採用チャンネル別のサービスページを整備</li>
+          <li>不動産・留学サービスのサブセクションをサイトに統合</li>
+        </ul>
+      </div>
+    </div>
+
     <!-- SKILLS -->
     <div class="sec-heading" data-en>Skills</div>
     <div class="sec-heading" data-ja>スキル</div>
@@ -562,7 +625,7 @@
         <div class="skill-group-label" data-en>Infrastructure &amp; DevOps</div>
         <div class="skill-group-label" data-ja>インフラ・DevOps</div>
         <div class="skills-chips">
-          <span class="chip">Docker</span>
+          <span class="chip">Docker (Omada SDN)</span>
           <span class="chip">Virtualmin / Webmin</span>
           <span class="chip">Linux</span>
           <span class="chip">Windows Server</span>
@@ -576,7 +639,7 @@
         <div class="skills-chips">
           <span class="chip">YAMAHA RTX</span>
           <span class="chip">NEC IX</span>
-          <span class="chip">TP-Link (Omada SDN)</span>
+          <span class="chip">TP-Link devices (AP, routers, switches, etc.)</span>
         </div>
       </div>
 
