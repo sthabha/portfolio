@@ -228,7 +228,17 @@
 
     /* Skills text */
     .skills-text { font-size: .855rem; color: #444; line-height: 1.75; }
-    .skills-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .75rem; }
+    .skill-groups { display: flex; flex-direction: column; gap: .85rem; margin-top: .75rem; }
+    .skill-group-label {
+      font-size: .65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #1e2d45;
+      margin-bottom: .35rem;
+      opacity: .7;
+    }
+    .skills-chips { display: flex; flex-wrap: wrap; gap: .4rem; }
     .chip {
       background: #e6eef7;
       color: #1e2d45;
@@ -499,36 +509,78 @@
     <p class="skills-text" data-ja>
       フルスタックのWeb開発とバックエンド自動化に精通。DB設計からデプロイ・運用保守まで一貫して担当できます。
     </p>
-    <div class="skills-chips">
-      <span class="chip">Python</span>
-      <span class="chip">Flask</span>
-      <span class="chip">FastAPI</span>
-      <span class="chip">C# / .NET</span>
-      <span class="chip">PHP</span>
-      <span class="chip">CodeIgniter</span>
-      <span class="chip">Laravel</span>
-      <span class="chip">VBA</span>
-      <span class="chip">MySQL</span>
-      <span class="chip">PostgreSQL</span>
-      <span class="chip">Redis</span>
-      <span class="chip">AWS EC2 / S3 / RDS</span>
-      <span class="chip">Route 53</span>
-      <span class="chip">Application Load Balancer</span>
-      <span class="chip">Muumuu Domain</span>
-      <span class="chip">Lolipop</span>
-      <span class="chip">Onamae.com</span>
-      <span class="chip">Docker</span>
-      <span class="chip">Virtualmin / Webmin</span>
-      <span class="chip">Linux</span>
-      <span class="chip">Windows Server</span>
-      <span class="chip">YAMAHA RTX</span>
-      <span class="chip">NEC IX</span>
-      <span class="chip">TP-Link (Omada SDN)</span>
-      <span class="chip">Google Drive API</span>
-      <span class="chip">Google Cloud Vision</span>
-      <span class="chip">GMO Payment Gateway</span>
-      <span class="chip">NAS (QNAP / Synology)</span>
-      <span class="chip">etc.</span>
+    <div class="skill-groups">
+
+      <div class="skill-group">
+        <div class="skill-group-label" data-en>Languages &amp; Frameworks</div>
+        <div class="skill-group-label" data-ja>言語・フレームワーク</div>
+        <div class="skills-chips">
+          <span class="chip">Python</span>
+          <span class="chip">Flask</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">C# / .NET</span>
+          <span class="chip">PHP</span>
+          <span class="chip">CodeIgniter</span>
+          <span class="chip">Laravel</span>
+          <span class="chip">VBA</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label" data-en>Databases</div>
+        <div class="skill-group-label" data-ja>データベース</div>
+        <div class="skills-chips">
+          <span class="chip">MySQL</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Redis</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label" data-en>Cloud &amp; Hosting</div>
+        <div class="skill-group-label" data-ja>クラウド・ホスティング</div>
+        <div class="skills-chips">
+          <span class="chip">AWS EC2 / S3 / RDS</span>
+          <span class="chip">Route 53</span>
+          <span class="chip">Application Load Balancer</span>
+          <span class="chip">Muumuu Domain</span>
+          <span class="chip">Lolipop</span>
+          <span class="chip">Onamae.com</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label" data-en>Infrastructure &amp; DevOps</div>
+        <div class="skill-group-label" data-ja>インフラ・DevOps</div>
+        <div class="skills-chips">
+          <span class="chip">Docker</span>
+          <span class="chip">Virtualmin / Webmin</span>
+          <span class="chip">Linux</span>
+          <span class="chip">Windows Server</span>
+          <span class="chip">NAS (QNAP / Synology)</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label" data-en>Networking</div>
+        <div class="skill-group-label" data-ja>ネットワーク</div>
+        <div class="skills-chips">
+          <span class="chip">YAMAHA RTX</span>
+          <span class="chip">NEC IX</span>
+          <span class="chip">TP-Link (Omada SDN)</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label" data-en>APIs &amp; Services</div>
+        <div class="skill-group-label" data-ja>API・外部サービス</div>
+        <div class="skills-chips">
+          <span class="chip">Google Drive API</span>
+          <span class="chip">Google Cloud Vision</span>
+          <span class="chip">GMO Payment Gateway</span>
+        </div>
+      </div>
+
     </div>
 
     <!-- ACADEMIC -->
