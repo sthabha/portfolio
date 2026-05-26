@@ -255,7 +255,13 @@
     .project-title { font-size: .875rem; font-weight: 700; color: #1e2d45; margin-bottom: .15rem; }
     .project-title a { color: #1e2d45; text-decoration: none; }
     .project-title a:hover { text-decoration: underline; }
-    .project-url { font-size: .75rem; color: var(--sidebar-accent); margin-bottom: .35rem; }
+    .project-meta { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin-bottom: .4rem; }
+    .project-period { font-size: .72rem; color: #888; font-weight: 600; }
+    .project-role { font-size: .63rem; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; padding: .1rem .45rem; border-radius: 3px; }
+    .project-role.lead { background: #dce8f5; color: #1e2d45; }
+    .project-role.eng { background: #e8f2e8; color: #2a4a2a; }
+    .project-sub-heading { font-size: .67rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #aaa; margin: 1.3rem 0 .8rem; border-left: 3px solid #d0dce8; padding-left: .5rem; }
+    .project-url { font-size: .75rem; margin-bottom: .35rem; }
     .project-url a { color: #5a8ab0; text-decoration: none; }
     .project-url a:hover { text-decoration: underline; }
     .project-desc { font-size: .8rem; color: #555; line-height: 1.65; }
@@ -493,8 +499,10 @@
             <li data-ja>外国人従業員の管理：安全教育・週28時間制限・在留カード確認・ネパール語／英語通訳</li>
             <li data-en>Supported technical intern trainees: Japanese / English education, visa renewal document preparation, entry-to-exit procedures</li>
             <li data-ja>技能実習生サポート：日英教育・在留資格更新書類準備・入国から退職までの手続き</li>
-            <li data-en>Attendance management (TimePro-VG); company car fleet management; built VBA automation tools in Excel</li>
-            <li data-ja>TimePro-VGによる勤怠管理；マイカー通勤管理（車検・保険・免許）；Excel VBAで業務効率化ツール作成</li>
+            <li data-en>Attendance management (TimePro-VG); company car fleet management (inspection, insurance, licence tracking)</li>
+            <li data-ja>TimePro-VGによる勤怠管理；マイカー通勤管理（車検・保険・免許）</li>
+            <li data-en>Built numerous Excel VBA macros and .NET Framework desktop applications to automate repetitive workflows and improve overall team efficiency</li>
+            <li data-ja>繰り返し作業の自動化と業務効率向上のため、Excel VBAマクロおよび.NET Frameworkデスクトップアプリを多数開発</li>
           </ul>
         </div>
       </div>
@@ -517,27 +525,109 @@
     <div class="sec-heading" data-en>Projects</div>
     <div class="sec-heading" data-ja>プロジェクト</div>
 
-    <!-- enjoy-coop.com -->
+    <!-- ── Work Projects ── -->
+    <div class="project-sub-heading" data-en>Work Projects — Nittsken Co., Ltd.</div>
+    <div class="project-sub-heading" data-ja>業務プロジェクト — 株式会社日通建</div>
+
+    <!-- Nurse Call -->
     <div class="project-entry">
-      <div class="project-title" data-en>Enjoy Cooperative — Technical Training & Skilled Worker Portal</div>
-      <div class="project-title" data-ja>エンジョイ協同組合 — 技能実習・特定技能 Webプラットフォーム</div>
-      <div class="project-url"><a href="https://enjoy-coop.com/" target="_blank">enjoy-coop.com</a></div>
+      <div class="project-title" data-en>Nurse Call Monitoring System</div>
+      <div class="project-title" data-ja>ナースコール管理システム</div>
+      <div class="project-meta">
+        <span class="project-period" data-en>Jan 2023 – Present</span>
+        <span class="project-period" data-ja>2023年01月 〜 現在</span>
+        <span class="project-role eng" data-en>Engineer</span>
+        <span class="project-role eng" data-ja>エンジニア</span>
+      </div>
       <div class="project-desc" data-en>
-        Developed the corporate web platform for a Japan-based technical training cooperative that coordinates international worker placements across 15+ countries. The site covers both the Technical Training and Skilled Worker visa pathways and provides structured information on visa procedures, workplace integration, and industry-specific placement programs.
+        Real-time nurse call monitoring integrated with Nakayo PBX and TCP/IP logging. When a patient presses the call button, the nurse station is immediately notified. Log analysis maps each call event to the originating patient or room, enabling fast and accurate response tracking.
         <ul>
-          <li>Multi-country recruitment flow covering agriculture, construction, and manufacturing sectors</li>
-          <li>Informational modules for Technical Training (3–5 year) and Skilled Worker visa tracks</li>
-          <li>Visa and administrative guidance content for both employers and candidates</li>
+          <li>TCP/IP log parsing to identify call source by patient room</li>
+          <li>Integration with Nakayo main unit over the local hospital network</li>
+          <li>Continuous monitoring with call-history logging</li>
         </ul>
       </div>
       <div class="project-desc" data-ja>
-        15カ国以上に展開する外国人技能実習向け協同組合のWebプラットフォームを開発。技能実習（3〜5年）・特定技能の両制度に対応した情報モジュールを実装し、ビザ申請手続きや職場定着支援、業種別受入プログラムを紹介するサイト構成を構築。
+        ナカヨ主装置とTCP/IPツールを連携したナースコールリアルタイム監視システム。患者がナースコールボタンを押すと、ナースステーションへ即時通知。TCP/IPログを解析し、呼び出し元の患者・病室を特定。
         <ul>
-          <li>農業・建設・製造業など複数業種の多国籍採用フローに対応</li>
-          <li>技能実習・特定技能の制度別コンテンツを整備</li>
-          <li>企業・外国人双方向けのビザ・行政手続きガイドを実装</li>
+          <li>TCP/IPログのパースによるコール発生元の病室特定</li>
+          <li>院内ローカルネットワーク経由でナカヨ主装置と連携</li>
+          <li>呼び出し履歴のログ管理・継続監視</li>
         </ul>
       </div>
+    </div>
+
+    <!-- Captive Portal -->
+    <div class="project-entry">
+      <div class="project-title" data-en>Hospital Captive Portal Wi-Fi System</div>
+      <div class="project-title" data-ja>病院向けキャプティブポータル Wi-Fi システム</div>
+      <div class="project-meta">
+        <span class="project-period" data-en>Nov 2023 – Mar 2024</span>
+        <span class="project-period" data-ja>2023年11月 〜 2024年03月</span>
+        <span class="project-role lead" data-en>Lead Engineer</span>
+        <span class="project-role lead" data-ja>リードエンジニア</span>
+      </div>
+      <div class="project-desc" data-en>
+        Designed and delivered a full captive portal Wi-Fi solution for hospital patients, owning every phase from DB design to QA. Omada Controller handles AP provisioning, YAMAHA RTX and NEC routers manage line and network control, and MySQL stores all authentication and session data.
+        <ul>
+          <li>Led DB design, coding, UI design, testing &amp; QA end-to-end</li>
+          <li>Omada SDN integration for centralised AP management across hospital floors</li>
+          <li>MySQL-based session authentication and usage tracking</li>
+          <li>Network segmentation and access control via YAMAHA RTX / NEC router configuration</li>
+        </ul>
+      </div>
+      <div class="project-desc" data-ja>
+        病院患者向けキャプティブポータルWi-FiシステムをDB設計からQAまで全工程リードエンジニアとして担当。Omada ControllerによるAP管理、ヤマハRTX・NECルータによるネットワーク制御、MySQLによる認証・セッションデータ管理を実装。
+        <ul>
+          <li>DB設計・コーディング・デザイン・テスト/QAの全工程を担当</li>
+          <li>院内各フロアへのOmada SDN集中型AP管理を統合</li>
+          <li>MySQLによるセッション認証と利用ログ管理</li>
+          <li>ヤマハRTX・NECルータによるネットワーク分離とアクセス制御</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Invoice Mail System -->
+    <div class="project-entry">
+      <div class="project-title" data-en>Invoice Mail Sending System</div>
+      <div class="project-title" data-ja>請求書メール送信システム</div>
+      <div class="project-meta">
+        <span class="project-period" data-en>Sep 2024 – Apr 2025</span>
+        <span class="project-period" data-ja>2024年09月 〜 2025年04月</span>
+        <span class="project-role lead" data-en>Lead Engineer</span>
+        <span class="project-role lead" data-ja>リードエンジニア</span>
+      </div>
+      <div class="project-desc" data-en>
+        End-to-end invoice distribution platform serving both internal staff and external customers. Internal users upload and manage invoice files via Google Drive API; customers receive a secure per-invoice download link by SMTP email and retrieve the file directly from Google Drive. Covered all phases including infrastructure setup.
+        <ul>
+          <li>Google Drive API for file upload, storage, and shareable link generation</li>
+          <li>SMTP-based automated email dispatch with per-customer download links</li>
+          <li>Dual interface: internal management dashboard &amp; customer-facing download flow</li>
+          <li>Covered DB design, coding, UI, QA, and infrastructure setup</li>
+        </ul>
+      </div>
+      <div class="project-desc" data-ja>
+        社内向けおよび顧客向け請求書送信システムの全工程を担当。社内ではGoogle Drive APIによる請求書ファイルのアップロード・管理機能を実装。顧客向けにはSMTPで請求書ごとのダウンロードリンクをメール送信し、顧客はGoogle Driveから直接ダウンロード可能。インフラ構築も含め全工程を担当。
+        <ul>
+          <li>Google Drive APIによるファイルアップロード・共有リンク生成</li>
+          <li>SMTP経由で顧客ごとのダウンロードリンクを自動メール送信</li>
+          <li>社内管理画面と顧客向けダウンロードフローの二重構成</li>
+          <li>DB設計・コーディング・デザイン・QA・インフラ構築の全工程を担当</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ── Personal Projects ── -->
+    <div class="project-sub-heading" data-en>Personal Projects</div>
+    <div class="project-sub-heading" data-ja>個人プロジェクト</div>
+
+    <!-- enjoy-coop.com -->
+    <div class="project-entry">
+      <div class="project-title" data-en>Enjoy Cooperative — Technical Training &amp; Skilled Worker Portal</div>
+      <div class="project-title" data-ja>エンジョイ協同組合 — 技能実習・特定技能 Webプラットフォーム</div>
+      <div class="project-url"><a href="https://enjoy-coop.com/" target="_blank">enjoy-coop.com</a></div>
+      <div class="project-desc" data-en>Corporate website for a technical training cooperative placing international workers in Japanese companies across 15+ countries.</div>
+      <div class="project-desc" data-ja>15カ国以上に展開する外国人技能実習向け協同組合のコーポレートサイトを開発。</div>
     </div>
 
     <!-- jp-link.co.jp -->
@@ -545,22 +635,8 @@
       <div class="project-title" data-en>Japan Link Co., Ltd. — Foreign Worker Recruitment Platform</div>
       <div class="project-title" data-ja>株式会社ジャパンリンク — 外国人材採用プラットフォーム</div>
       <div class="project-url"><a href="https://www.jp-link.co.jp/" target="_blank">jp-link.co.jp</a></div>
-      <div class="project-desc" data-en>
-        Built and maintained the corporate website for a full-service foreign worker recruitment and staffing agency operating in manufacturing, food service, healthcare, and hospitality. The platform communicates the company's end-to-end service offering — from overseas sourcing and pre-employment training to visa processing and post-hire follow-up.
-        <ul>
-          <li>End-to-end recruitment workflow: overseas sourcing → pre-employment training → visa acquisition → onboarding</li>
-          <li>Service pages covering domestic and international hiring channels</li>
-          <li>Real estate and study-abroad ancillary service sections integrated into the site</li>
-        </ul>
-      </div>
-      <div class="project-desc" data-ja>
-        製造・飲食・医療・ホスピタリティ分野向けの外国人材紹介・派遣会社のコーポレートサイトを構築・保守。海外候補者の採用から事前研修・ビザ取得・入社後フォローアップまで一貫したサービスを紹介するサイト構成を実装。
-        <ul>
-          <li>海外採用→事前研修→ビザ申請→入社サポートのエンドツーエンドフロー紹介</li>
-          <li>国内・海外採用チャンネル別のサービスページを整備</li>
-          <li>不動産・留学サービスのサブセクションをサイトに統合</li>
-        </ul>
-      </div>
+      <div class="project-desc" data-en>Corporate website for a full-service foreign worker recruitment agency covering manufacturing, food service, healthcare, and hospitality sectors in Japan.</div>
+      <div class="project-desc" data-ja>製造・飲食・医療・ホスピタリティ向け外国人材紹介・派遣会社のコーポレートサイトを構築・保守。</div>
     </div>
 
     <!-- SKILLS -->
