@@ -505,6 +505,10 @@
             <li data-ja>TimePro-VGによる勤怠管理；マイカー通勤管理（車検・保険・免許）</li>
             <li data-en>Built numerous Excel VBA macros and .NET Framework desktop applications to automate repetitive workflows and improve overall team efficiency</li>
             <li data-ja>繰り返し作業の自動化と業務効率向上のため、Excel VBAマクロおよび.NET Frameworkデスクトップアプリを多数開発</li>
+            <li data-en>Designed in-house graphics and visual materials (notices, safety posters, instructional signage) for use across the factory floor</li>
+            <li data-ja>工場内で使用する社内グラフィック・掲示物（案内・安全ポスター・作業指示書など）をデザイン・作成</li>
+            <li data-en>Oversaw all foreign national workers on the factory floor, ensuring compliance, safety, and smooth day-to-day operations</li>
+            <li data-ja>工場内の外国人従業員全員を監督し、法令遵守・安全確保・日常業務の円滑な運営を担当</li>
           </ul>
         </div>
       </div>
@@ -561,30 +565,44 @@
 
     <!-- Captive Portal -->
     <div class="project-entry">
-      <div class="project-title" data-en>Hospital Captive Portal Wi-Fi System</div>
-      <div class="project-title" data-ja>病院向けキャプティブポータル Wi-Fi システム</div>
+      <div class="project-title" data-en>Hospital Captive Portal Wi-Fi System <span style="font-weight:400;color:#888;font-size:.8rem;">(v1 → v2 in progress)</span></div>
+      <div class="project-title" data-ja>病院向けキャプティブポータル Wi-Fi システム <span style="font-weight:400;color:#888;font-size:.8rem;">（v1完了・v2開発中）</span></div>
       <div class="project-meta">
-        <span class="project-period" data-en>Nov 2023 – Mar 2024</span>
-        <span class="project-period" data-ja>2023年11月 〜 2024年03月</span>
+        <span class="project-period" data-en>Nov 2023 – Mar 2024 &nbsp;·&nbsp; v2: 2025 –</span>
+        <span class="project-period" data-ja>2023年11月 〜 2024年03月 &nbsp;·&nbsp; v2：2025年〜</span>
         <span class="project-role lead" data-en>Lead</span>
-        <span class="project-role lead" data-ja>リード</span>
+        <span class="project-role lead" data-ja>リードエンジニア</span>
       </div>
       <div class="project-desc" data-en>
-        Designed and delivered a full captive portal Wi-Fi solution for hospital patients, owning every phase from DB design to QA. Omada Controller handles AP provisioning, YAMAHA RTX and NEC routers manage line and network control, and MySQL stores all authentication and session data.
+        <strong>v1 (Delivered):</strong> The original system had been outsourced to a vendor in Vietnam. Took over in-house, contributed to the payment module, then led a full rebuild — owning every phase from DB design to QA. Omada Controller handles AP provisioning, YAMAHA RTX and NEC routers manage network control, and MySQL stores authentication and session data.
         <ul>
-          <li>Lead DB design, coding, UI design, testing &amp; QA end-to-end</li>
+          <li>Inherited and integrated the payment module from the outsourced version</li>
+          <li>Led DB design, coding, UI design, testing &amp; QA end-to-end</li>
           <li>Omada SDN integration for centralised AP management across hospital floors</li>
           <li>MySQL-based session authentication and usage tracking</li>
           <li>Network segmentation and access control via YAMAHA RTX / NEC router configuration</li>
         </ul>
+        <strong>v2 (In Progress):</strong> High volume of customer support calls on the current system prompted a full redesign. Rebuilding the system from the ground up — rearchitecting the server infrastructure, rewriting the application flow, and redesigning the UI — with the goal of significantly reducing incoming support calls.
+        <ul>
+          <li>Root-cause analysis of recurring customer issues driving the redesign</li>
+          <li>Full rearchitecture: server infrastructure, application flow, and UI</li>
+          <li>Goal: measurably reduce customer support call volume post-launch</li>
+        </ul>
       </div>
       <div class="project-desc" data-ja>
-        病院患者向けキャプティブポータルWi-FiシステムをDB設計からQAまで全工程リードエンジニアとして担当。Omada ControllerによるAP管理、ヤマハRTX・NECルータによるネットワーク制御、MySQLによる認証・セッションデータ管理を実装。
+        <strong>v1（完了）：</strong> 元々はベトナムの外部ベンダーに委託されていたシステム。決済モジュールを引き継ぎ・統合した後、DB設計からQAまで全工程をリードエンジニアとして社内で再構築。Omada ControllerによるAP管理、ヤマハRTX・NECルータによるネットワーク制御、MySQLによる認証・セッション管理を実装。
         <ul>
+          <li>外注版からの決済モジュールを引き継ぎ・統合</li>
           <li>DB設計・コーディング・デザイン・テスト/QAの全工程を担当</li>
           <li>院内各フロアへのOmada SDN集中型AP管理を統合</li>
           <li>MySQLによるセッション認証と利用ログ管理</li>
           <li>ヤマハRTX・NECルータによるネットワーク分離とアクセス制御</li>
+        </ul>
+        <strong>v2（開発中）：</strong> 現行システムへの顧客問い合わせが多発したため、全面的なリデザインを決定。サーバーインフラ・アプリケーションフロー・UIをゼロから再構築し、問い合わせ件数の大幅削減を目標に開発中。
+        <ul>
+          <li>問い合わせ多発の根本原因を分析し、リデザインの方向性を策定</li>
+          <li>サーバーインフラ・アプリケーションフロー・UIの全面再設計</li>
+          <li>リリース後の顧客問い合わせ件数の大幅削減が目標</li>
         </ul>
       </div>
     </div>
@@ -615,6 +633,36 @@
           <li>SMTP経由で顧客ごとのダウンロードリンクを自動メール送信</li>
           <li>社内管理画面と顧客向けダウンロードフローの二重構成</li>
           <li>DB設計・コーディング・デザイン・QA・インフラ構築の全工程を担当</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- AWS Instance Management & Cost Automation -->
+    <div class="project-entry">
+      <div class="project-title" data-en>AWS EC2 Instance Management &amp; Cost Automation</div>
+      <div class="project-title" data-ja>AWS EC2 インスタンス管理・コスト削減自動化</div>
+      <div class="project-meta">
+        <span class="project-role lead" data-en>Lead</span>
+        <span class="project-role lead" data-ja>リードエンジニア</span>
+      </div>
+      <div class="project-desc" data-en>
+        Built an internal tool that lets staff from any department start or stop AWS EC2 instances without AWS Console access or technical knowledge, combined with a nightly automation that automatically stops non-critical instances (invoice system, internal system, dev environments) outside business hours and restarts them before the workday — reducing AWS costs with zero manual effort.
+        <ul>
+          <li>Accessible to any department — no AWS credentials or technical knowledge required</li>
+          <li>Simple UI for one-click start / stop from any browser</li>
+          <li>Scheduled automation stops dev and internal instances overnight</li>
+          <li>Targets invoice system and intern management system instances</li>
+          <li>Continuous monthly cost savings with no manual intervention</li>
+        </ul>
+      </div>
+      <div class="project-desc" data-ja>
+        AWSコンソール不要で、どの部署のスタッフでもEC2インスタンスを起動・停止できる社内ツールを開発。専門知識不要でどの部署からでも利用可能。さらに、業務時間外に稼働不要な開発環境・社内システム（請求書システム・インターンシステム）を夜間に自動停止し、始業前に自動起動するスケジューリング自動化も実装。手動介入ゼロでAWSコストを継続削減。
+        <ul>
+          <li>どの部署からでも利用可能 — AWS認証情報・専門知識不要</li>
+          <li>ブラウザからワンクリックで起動・停止できるシンプルUI</li>
+          <li>夜間に開発・社内用インスタンスを自動停止するスケジュール自動化</li>
+          <li>請求書システム・インターン管理システムのインスタンスが対象</li>
+          <li>手動対応ゼロで毎月のAWSコストを継続削減</li>
         </ul>
       </div>
     </div>
