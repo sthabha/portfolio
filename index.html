@@ -284,6 +284,18 @@
       .career-period, .acad-period { font-size: .72rem; }
     }
 
+    /* ── PRINT ── */
+    @media print {
+      body { background: none; padding: 0; margin: 0; }
+      .lang-bar { display: none; }
+      .cv { max-width: 100%; box-shadow: none; min-height: unset; }
+      .sidebar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .chip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .project-role { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      a { text-decoration: none; }
+      @page { margin: 0; size: A4; }
+    }
+
     /* ── BILINGUAL ── */
     [data-en], [data-ja] { display: none; }
     .lang-en [data-en] { display: revert; }
@@ -302,8 +314,8 @@
 <!-- Language toggle -->
 <div class="lang-bar">
   <div class="lang-toggle">
-    <button id="btn-en" class="active" onclick="setLang('ja')">JP</button>
-    <button id="btn-ja" onclick="setLang('en')">EN</button>
+    <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+    <button id="btn-ja" onclick="setLang('ja')">JP</button>
   </div>
 </div>
 
@@ -842,6 +854,12 @@
     document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
     document.documentElement.lang = lang === 'ja' ? 'ja' : 'en';
   }
+
+  (function () {
+    var browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    var lang = browserLang.startsWith('ja') ? 'ja' : 'en';
+    setLang(lang);
+  })();
 </script>
 </body>
 </html>
